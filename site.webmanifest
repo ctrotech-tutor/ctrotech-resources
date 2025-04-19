@@ -1,0 +1,21 @@
+{
+  "name": "Ctrotech Tutor Insights",
+  "short_name": "Ctrotech",
+  "description": "Learn and Grow with structured academic and digital skill resources.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+
+}

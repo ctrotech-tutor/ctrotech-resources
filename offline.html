@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Offline Mode | Ctrotech Tutor Insights</title>
+  <meta name="theme-color" content="#4f46e5" />
+  <link rel="icon" href="/icons/icon-192x192.png" />
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="bg-white text-gray-800 antialiased font-sans">
+  <div class="bg-white p-8 max-w-md w-full text-center">
+    <h1 class="text-3xl font-bold text-indigo-600 flex items-center justify-center gap-2 mb-2">
+      <ion-icon name="wifi-outline" class="text-2xl"></ion-icon>
+      Offline Mode
+    </h1>
+    
+    <p class="text-gray-600 text-base mb-4">
+      You’re currently offline. Please check your connection and try again.
+    </p>
+
+    <div class="text-sm text-blue-700 bg-blue-50 border border-blue-200 p-3 rounded-lg mb-4">
+      <ion-icon name="information-circle-outline" class="inline text-lg align-middle mr-1"></ion-icon>
+      Some content may still be available. Reconnect for full experience.
+    </div>
+
+    <blockquote class="italic text-gray-500 mb-6">
+      “Learning never stops — even when the internet does.”
+    </blockquote>
+
+    <a href="#" onclick="event.preventDefault(); history.back();" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-full transition">
+      <ion-icon name="home-outline" class="text-lg"></ion-icon>
+      Back to Homepage
+    </a>
+  </div>
+</body>
+</html>

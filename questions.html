@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2025 JAMB Novel Questions | Lekki Headmaster</title>
+  
+  <!-- SEO -->
+  <meta name="description" content="2025 JAMB Novel Questions - Study and download questions from the recommended novel 'Lekki Headmaster' for JAMB 2025." />
+  <meta name="author" content="Ctrotech Tutor Insights" />
+  <meta name="keywords" content="JAMB 2025, Lekki Headmaster, Novel Questions, Study Guide, UTME" />
+  <meta name="theme-color" content="#4f46e5" />
+  <link rel="canonical" href="https://yourdomain.com/2025-novel-questions.html" />
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+  
+  <!-- Styles -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+  <style>
+    @keyframes slideDown {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInBanner {
+      0% { opacity: 0; transform: translateY(-20%); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-slide-down { animation: slideDown 0.3s ease-out forwards; }
+    .animate-slide-in { animation: slideInBanner 0.5s ease-out forwards; }
+    mark {
+      background-color: #fef08a;
+      padding: 0 4px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+  </style>
+
+  <noscript>
+    <style> 
+    		.noscript-warning { display: block !important; }
+    </style>
+  </noscript>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans antialiased leading-relaxed">
+  <!-- Offline Alert -->
+  <div id="offlineBanner" role="alert" aria-live="assertive"
+       class="hidden fixed top-0 z-40 w-full bg-yellow-100 text-yellow-800 text-center py-2 text-sm font-medium">
+    You're offline. Some features may be unavailable.
+  </div>
+
+  <!-- Noscript Warning -->
+  <div class="noscript-warning hidden text-center bg-red-100 text-red-800 p-3 text-sm">
+    JavaScript is required to run this page. Please enable it in your browser.
+  </div>
+
+  <!-- Header -->
+  <header class="fixed left-0 top-0 z-30 w-full bg-white border-b shadow-sm">
+    <div class="max-w-4xl mx-auto flex justify-between items-center px-6 py-3 md:py-4">
+      <div>
+        <h1 id="page-title" class="text-xl md:text-2xl font-bold text-indigo-700 flex items-center gap-2">
+          <ion-icon name="book-outline" class="text-2xl text-indigo-500"></ion-icon>
+          Lekki Headmaster Q&A
+        </h1>
+        <small id="page-subtitle" class="text-xs text-gray-500 mt-0.5">2025 JAMB Novel Questions</small>
+      </div>
+      <button onclick="dropItems()" aria-haspopup="true" aria-expanded="false"
+              class="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-full shadow hover:bg-green-700 transition">
+        <ion-icon name="menu-outline" class="text-lg"></ion-icon>
+        <span class="hidden sm:inline">More options</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Dropdown Menu -->
+  <nav id="dropdownMenu" class="hidden fixed right-6 top-20 bg-white border shadow-md rounded-lg w-48 z-40 animate-slide-down">
+    <ul class="text-gray-700 py-2">
+      <li><button onclick="downloadPDF()" class="w-full text-left px-4 py-2 hover:bg-gray-100">Download PDF</button></li>
+      <li class="hidden"><a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a></li>
+      <li class="hidden"><a href="summary.html" class="block px-4 py-2 hover:bg-gray-100">Novel Summary</a></li>
+      <li><a href="mailto:ctrotech.devs@gmail.com" class="block px-4 py-2 hover:bg-gray-100">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <main id="novelQAContent" class="py-[5.7rem] max-w-4xl mx-auto px-6">
+    <!-- Search -->
+    <div class="mb-6 relative">
+      <label for="novelSearch" class="sr-only">Search questions</label>
+      <input type="text" id="novelSearch" placeholder="Search questions..." aria-label="Search questions"
+             class="w-full px-5 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-400 placeholder-gray-500 outline-none" />
+      <ion-icon name="search-outline" class="absolute right-4 top-3.5 text-gray-400 text-xl pointer-events-none"></ion-icon>
+    </div>
+
+    <!-- Questions Container -->
+    <section id="questionsContainer" class="space-y-6" aria-live="polite">
+      <!-- Dynamic question cards will load here -->
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white bg-opacity-6 fixed bottom-0 mt-8 border-t py-4 text-center text-xs text-gray-500 px-4">
+    <div class="flex items-center justify-center gap-2">
+      <img src="ctrotech.jpg" alt="Ctrotech Logo" class="h-8 w-auto rounded-full" />
+      <span>&copy; 2025 Ctrotech Tutor Insights. All rights reserved. | Designed for Education & Growth</span>
+    </div>
+  </footer>
+  
+  <!-- Scroll To Top Button -->
+  <button id="scrollTopBtn" aria-label="Scroll to top"
+          class="hidden fixed bottom-12 right-6 opacity-0 scale-90 transition-all duration-300 ease-in-out bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 z-50 w-12 h-12 flex items-center justify-center">
+    <ion-icon name="arrow-up-outline" class="text-xl"></ion-icon>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js"></script>
+  <script src="app.js" defer></script>
+  <script src="questionData.js"></script>
+  
+  <!-- Dropdown Logic -->
+  <script>
+    let isMenuOpen = false;
+
+    function dropItems() {
+      const menu = document.getElementById("dropdownMenu");
+
+      if (!isMenuOpen) {
+        menu.classList.remove("hidden");
+        isMenuOpen = true;
+        document.addEventListener("click", handleOutsideClick);
+        window.addEventListener("scroll", handleScrollClose);
+      } else {
+        closeMenu();
+      }
+    }
+
+    function closeMenu() {
+      const menu = document.getElementById("dropdownMenu");
+      menu.classList.add("hidden");
+      isMenuOpen = false;
+      document.removeEventListener("click", handleOutsideClick);
+      window.removeEventListener("scroll", handleScrollClose);
+    }
+
+    function handleOutsideClick(e) {
+      const menu = document.getElementById("dropdownMenu");
+      const button = document.querySelector('[onclick="dropItems()"]');
+      if (!menu.contains(e.target) && !button.contains(e.target)) {
+        closeMenu();
+      }
+    }
+
+    function handleScrollClose() {
+      if (isMenuOpen) closeMenu();
+    }
+  // Register service worker for offline caching
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch(error => {
+        console.error('Service Worker registration failed:', error);
+      });
+  });
+}
+  // Handle install prompt
+    let deferredPrompt;
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+
+      setTimeout(() => {
+        if (confirm("Do you want to install the Novel Practice App?")) {
+          deferredPrompt.prompt();
+        }
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
