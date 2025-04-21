@@ -7,7 +7,7 @@
         <meta name="keywords" content="JAMB 2025, Novel Questions, The Lekki Headmaster, UTME, Study App, Exam Practice" />
         <meta name="theme-color" content="#4f46e5" />
         <meta name="description" content="Practice JAMB 2025 questions from the novel 'The Lekki Headmaster'. Get exam-ready with Ctrotech Tutor Insights." />
- 
+
         <!-- Canonical and Robots -->
         <link rel="canonical" href="https://ctrotech-tutor.github.io/ctrotech-resources/" />
         <meta name="robots" content="index, follow" />
@@ -41,7 +41,7 @@
         <meta itemprop="name" content="2025 JAMB Novel Practice | Ctrotech Tutor Insights" />
         <meta itemprop="description" content="Practice smart questions from The Lekki Headmaster. Study, grow, and succeed with Ctrotech Tutor Insights." />
         <meta itemprop="image" content="https://ctrotech-tutor.github.io/ctrotech-resources/banner.png" />
-        
+
         <!-- Favicon and App Icons -->
         <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
@@ -70,33 +70,73 @@
             }
         </script>
         <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R1FBLT5NZR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1FBLT5NZR"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-  gtag('config', 'G-R1FBLT5NZR');
-</script>
+            gtag("config", "G-R1FBLT5NZR");
+        </script>
         <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WGZDKJZC');</script>
-<!-- End Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-WGZDKJZC");
+        </script>
+        <!-- End Google Tag Manager -->
         <style>
-            .fade-in {
-                opacity: 0;
-                transform: translateY(20px);
-                animation: fadeInUp 1s ease forwards;
+            /* Fade In Animation */
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
             }
 
-            @keyframes fadeInUp {
-                to {
+            .animate-fade-in {
+                animation: fadeIn 1s ease-out forwards;
+            }
+
+            /* Slide Up Animation */
+            @keyframes slideUp {
+                0% {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                100% {
                     opacity: 1;
                     transform: translateY(0);
                 }
+            }
+
+            .animate-slide-up {
+                animation: slideUp 1s ease-out forwards;
+            }
+
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .animate-fade-in {
+                animation: fadeIn 0.5s ease-out forwards;
             }
 
             #loader {
@@ -121,65 +161,278 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
         </style>
     </head>
-    <body class="bg-gradient-to-br from-indigo-700 to-blue-500 text-gray-800 font-sans min-h-screen" aria-label="2025 JAMB Novel Practice App">
+    <body class="bg-gradient-to-br from-indigo-700 to-blue-500 text-gray-800 font-sans min-h-screen">
         <!-- Loading Screen -->
-        <div id="loader" role="status" aria-live="polite" aria-label="Loading content">
-            <div class="text-center animate-pulse" aria-hidden="true">
+        <div id="loader" class="fixed inset-0 bg-white z-50 flex items-center justify-center" role="status" aria-live="polite">
+            <div class="text-center animate-pulse">
                 <img src="logo.png" alt="Ctrotech logo loading" class="w-16 h-16 mx-auto mb-2" />
                 <p class="text-sm text-gray-600">Loading your study experience...</p>
             </div>
         </div>
 
-        <!-- Main Section -->
-        <main role="main" class="flex flex-col items-center justify-center flex-grow text-center px-4 py-16">
-            <!-- Logo -->
-            <img src="logo.png" alt="Ctrotech Tutor Insights logo" class="w-24 h-24 mb-6 fade-in rounded-md" style="animation-delay: 0.2s;" />
+        <main class="flex flex-col items-center justify-center px-4 py-16 text-center">
+            <!-- Logo with fade-in animation -->
+            <img src="logo.png" alt="Ctrotech Tutor Insights logo" class="w-24 h-24 mb-6 rounded-md animate-fade-in" />
 
-            <!-- Headings -->
-            <h1 class="text-3xl md:text-4xl font-bold mb-2 text-white fade-in" style="animation-delay: 0.4s;">
-                Master the 2025 JAMB Novel with Confidence
+            <!-- Main Heading -->
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4 animate-slide-up">
+                Master the <span class="text-yellow-300">2025 JAMB Novel</span><br class="hidden md:block" />
+                with <span class="underline decoration-indigo-300">Confidence</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-100 mb-8 fade-in" style="animation-delay: 0.6s;">Smart Practice Questions from <em>The Lekki Headmaster</em></p>
+
+            <!-- Subheading -->
+            <p class="text-lg md:text-xl text-gray-100 mb-6 animate-fade-in">Smart Practice Questions from <em>The Lekki Headmaster</em></p>
 
             <!-- CTA Button -->
-            <a
-                href="questions.html"
-                class="inline-flex items-center gap-2 px-6 py-3 bg-white text-indigo-700 font-semibold rounded-full shadow hover:bg-gray-100 transition-all duration-300"
-                title="Go to practice questions"
-                role="button"
-                aria-label="Start practicing questions from the JAMB 2025 novel"
-            >
-                <ion-icon name="book-outline" class="text-xl" aria-hidden="true"></ion-icon>
+            <a href="questions.html" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-indigo-700 font-semibold rounded-full shadow-md hover:bg-gray-100 hover:scale-105 transition-all duration-300 group">
+                <ion-icon name="book-outline" class="text-2xl group-hover:animate-bounce"></ion-icon>
                 Start Practicing Now
             </a>
 
+            <!-- Quick Info Highlights -->
+            <div class="flex flex-wrap justify-center gap-4 mt-8 text-white text-sm md:text-base">
+                <div class="flex items-center gap-2 bg-indigo-600 px-4 py-2 rounded-full shadow">
+                    <ion-icon name="checkmark-circle" class="text-green-300"></ion-icon>
+                    100+ JAMB-style Questions
+                </div>
+                <div class="flex items-center gap-2 bg-indigo-600 px-4 py-2 rounded-full shadow">
+                    <ion-icon name="flash-outline" class="text-yellow-300"></ion-icon>
+                    Exam-Ready Practice
+                </div>
+                <div class="flex items-center gap-2 bg-indigo-600 px-4 py-2 rounded-full shadow">
+                    <ion-icon name="school-outline" class="text-white"></ion-icon>
+                    100% Free Access
+                </div>
+            </div>
+
             <!-- About Section -->
-            <section class="bg-white text-center py-10 px-4 fade-in mt-8 rounded-xl shadow-lg w-full max-w-xl" style="animation-delay: 1s;" aria-labelledby="about-heading">
-                <img src="ctrotech.jpg" alt="Ctrotech Tutor Insights banner" class="w-20 h-20 mx-auto mb-4 rounded-md" />
-                <h2 id="about-heading" class="text-2xl font-bold text-indigo-700 mb-2">Join the Ctrotech Tutor Insights Community</h2>
-                <p class="text-gray-600 mb-4">
-                    Get access to structured learning, weekly WhatsApp classes, and core academic + digital skill support. Grow with like minds!
+            <section class="bg-white text-center py-10 px-6 mt-14 rounded-2xl shadow-2xl w-full max-w-2xl border border-indigo-200 animate-fade-in">
+                <img src="ctrotech.jpg" alt="Ctrotech Tutor Insights banner" class="w-20 h-20 mx-auto mb-4 rounded-md shadow" />
+                <h2 class="text-2xl font-bold text-indigo-700 mb-3">Join the Ctrotech Tutor Insights Community</h2>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Get access to <strong>structured learning</strong>, weekly WhatsApp classes, and support for <em>core academic + digital skills</em>.
+                    <span class="text-indigo-600 font-semibold">Grow with like minds!</span>
                 </p>
+
                 <a
                     href="https://wa.me/2349041622945?text=Hello%20Ctrotech%20Tutor%20Insights!%20I'm%20interested%20in%20joining%20your%20learning%20community..."
-                    class="inline-flex items-center gap-2 px-5 py-3 text-white bg-indigo-600 rounded-full hover:bg-indigo-700 transition-all duration-300"
-                    title="Join Ctrotech community on WhatsApp"
                     target="_blank"
-                    rel="noopener"
-                    role="link"
-                    aria-label="Join Ctrotech Tutor Insights WhatsApp community"
+                    class="inline-flex items-center gap-2 px-6 py-3 text-white bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-700 transition-all"
                 >
-                    <ion-icon name="logo-whatsapp" aria-hidden="true"></ion-icon>
+                    <ion-icon name="logo-whatsapp" class="text-2xl"></ion-icon>
                     Join Us on WhatsApp
                 </a>
             </section>
+
+            <section class="bg-indigo-100 text-indigo-900 py-14 px-6 mt-16 text-left w-full max-w-5xl rounded-2xl shadow-xl animate-fade-in">
+                <h2 class="text-3xl font-extrabold mb-8 flex items-center gap-2">
+                    <ion-icon name="star-outline" class="text-indigo-700 text-2xl flex-shrink-0"></ion-icon>
+                    Why Choose This App?
+                </h2>
+
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4 animate-slide-up">
+                        <ion-icon name="bulb-outline" class="text-2xl text-indigo-700 mt-1 shrink-0"></ion-icon>
+                        <div>
+                            <h3 class="font-semibold text-lg">Smart Quiz Engine</h3>
+                            <p class="text-indigo-800 text-sm">Practice by topics, chapters, difficulty, or full mock. Your learning, your way.</p>
+                        </div>
+                    </li>
+
+                    <li class="flex items-start gap-4 animate-slide-up" style="animation-delay: 0.2s;">
+                        <ion-icon name="cloud-offline-outline" class="text-2xl text-indigo-700 mt-1 shrink-0"></ion-icon>
+                        <div>
+                            <h3 class="font-semibold text-lg">Offline Access</h3>
+                            <p class="text-indigo-800 text-sm">Study anytime, anywhere—even with no data. Your progress is saved.</p>
+                        </div>
+                    </li>
+
+                    <li class="flex items-start gap-4 animate-slide-up" style="animation-delay: 0.4s;">
+                        <ion-icon name="book-outline" class="text-2xl text-indigo-700 mt-1 shrink-0"></ion-icon>
+                        <div>
+                            <h3 class="font-semibold text-lg">Summarized Chapters</h3>
+                            <p class="text-indigo-800 text-sm">Get crisp notes and key points from <em>The Lekki Headmaster</em> for fast revision.</p>
+                        </div>
+                    </li>
+
+                    <li class="flex items-start gap-4 animate-slide-up" style="animation-delay: 0.6s;">
+                        <ion-icon name="chatbubble-ellipses-outline" class="text-2xl text-indigo-700 mt-1 shrink-0"></ion-icon>
+                        <div>
+                            <h3 class="font-semibold text-lg">Live WhatsApp Classes</h3>
+                            <p class="text-indigo-800 text-sm">Weekly sessions with tutors and peers for questions, discussions, and more.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="bg-white py-16 px-6 mt-20 rounded-2xl shadow-xl w-full max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-indigo-700 mb-12 flex justify-center items-center gap-2">
+                    <ion-icon name="heart-outline" class="text-2xl"></ion-icon>
+                    What Our Students Say
+                </h2>
+
+                <div class="relative overflow-hidden">
+                    <div id="testimonial-carousel" class="flex transition-transform duration-700 ease-in-out"></div>
+                </div>
+
+                <!-- Dots -->
+                <div class="flex justify-center mt-6 space-x-2" id="carousel-dots"></div>
+            </section>
+            <!-- Newsletter Signup -->
+            <!-- Newsletter Signup -->
+            <section id="newsletter-section" class="bg-white text-center py-10 px-4 mt-12 rounded-xl shadow-lg w-full max-w-xl animate-slide-up">
+                <h2 class="text-2xl font-bold text-indigo-700 mb-2">Stay in the Loop</h2>
+                <p class="text-gray-600 mb-4">Subscribe for free updates, tips, and motivational study content!</p>
+
+                <form id="newsletter-form" class="flex flex-col sm:flex-row gap-2 justify-center items-center">
+                    <input type="email" id="newsletter-email" placeholder="Your email" class="w-full sm:w-auto px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" required />
+                    <button type="submit" class="flex items-center gap-2 px-6 py-2 bg-indigo-600 text-white font-semibold rounded-full hover:bg-indigo-700 transition">
+                        <ion-icon name="mail-outline" class="text-lg"></ion-icon>
+                        Subscribe
+                    </button>
+                </form>
+
+                <p id="newsletter-msg" class="mt-4 text-sm text-green-600 font-medium hidden">Thanks for subscribing!</p>
+            </section>
+            <!-- Scroll to Top Button -->
+            <button id="scrollTop" class="fixed w-14 h-14 flex items-center justify-center bottom-6 right-6 p-3 rounded-full bg-indigo-600 text-white shadow-lg hover:bg-indigo-700 transition hidden">
+                <ion-icon name="arrow-up-outline" class="text-xl"></ion-icon>
+            </button>
         </main>
 
         <!-- Footer -->
-        <footer class="bg-white py-4 text-center text-sm text-indigo-800 w-full" role="contentinfo">
+        <footer class="bg-white py-4 text-center text-sm text-indigo-800 w-full mt-12">
             <p>&copy; 2025 Ctrotech Tutor Insights. All rights reserved.</p>
         </footer>
 
+        <script>
+            // Loader
+            window.addEventListener("load", () => (document.getElementById("loader").style.display = "none"));
+
+            // Scroll to Top
+            const scrollTop = document.getElementById("scrollTop");
+            window.addEventListener("scroll", () => {
+                scrollTop.classList.toggle("hidden", window.scrollY < 300);
+            });
+            scrollTop.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+            const testimonials = [
+                {
+                    name: "Aisha M.",
+                    title: "2025 JAMB Candidate",
+                    message: "This app changed how I study. The quizzes and summaries helped me focus. I’m confident!",
+                    image: "",
+                },
+                {
+                    name: "David K.",
+                    title: "JAMB Student",
+                    message: "Offline mode is a game changer. I revise anywhere, anytime. I also love the WhatsApp support!",
+                    image: "",
+                },
+                {
+                    name: "Chinonso E.",
+                    title: "Learner & Aspirant",
+                    message: "Feels like a personal tutor in my pocket. Well structured, easy to use, and super helpful.",
+                    image: "", // No image, fallback will apply
+                },
+            ];
+
+            const carousel = document.getElementById("testimonial-carousel");
+            const dotsContainer = document.getElementById("carousel-dots");
+
+            function renderTestimonials() {
+                carousel.innerHTML = "";
+                dotsContainer.innerHTML = "";
+
+                testimonials.forEach((testimonial, index) => {
+                    const card = document.createElement("div");
+                    card.className = "min-w-full px-6 animate-slide-up";
+                    card.innerHTML = `
+        <div class="bg-indigo-50 p-6 rounded-xl shadow text-left transition duration-500 ease-in-out hover:shadow-lg">
+          <div class="flex items-center gap-3 mb-4">
+            ${
+                testimonial.image
+                    ? `<img src="${testimonial.image}" class="w-12 h-12 rounded-full object-cover border border-indigo-300" alt="${testimonial.name}" />`
+                    : `<ion-icon name="person-circle-outline" class="text-4xl text-indigo-400"></ion-icon>`
+            }
+            <div>
+              <h3 class="font-semibold text-lg text-indigo-800">${testimonial.name}</h3>
+              <p class="text-sm text-indigo-500">${testimonial.title}</p>
+            </div>
+          </div>
+          <p class="text-sm text-indigo-900 italic leading-relaxed">“${testimonial.message}”</p>
+        </div>
+      `;
+                    carousel.appendChild(card);
+
+                    const dot = document.createElement("div");
+                    dot.className = `w-3 h-3 rounded-full transition-all duration-300 ${index === 0 ? "bg-indigo-500 opacity-80" : "bg-indigo-300 opacity-50"}`;
+                    dot.id = `dot-${index}`;
+                    dotsContainer.appendChild(dot);
+                });
+            }
+
+            let currentIndex = 0;
+            function updateCarousel(index) {
+                const offset = -index * 100;
+                carousel.style.transform = `translateX(${offset}%)`;
+
+                testimonials.forEach((_, i) => {
+                    const dot = document.getElementById(`dot-${i}`);
+                    if (dot) {
+                        dot.classList.toggle("bg-indigo-500", i === index);
+                        dot.classList.toggle("opacity-80", i === index);
+                        dot.classList.toggle("bg-indigo-300", i !== index);
+                        dot.classList.toggle("opacity-50", i !== index);
+                    }
+                });
+            }
+
+            function startAutoSlide() {
+                setInterval(() => {
+                    currentIndex = (currentIndex + 1) % testimonials.length;
+                    updateCarousel(currentIndex);
+                }, 6000);
+            }
+
+            function simulateNewTestimonial() {
+                const newTestimonial = {
+                    name: "Student " + (testimonials.length + 1),
+                    title: "New App Fan",
+                    message: "Another great update! This keeps motivating me to keep pushing for my goals.",
+                    image: "", // simulate no image
+                };
+                testimonials.push(newTestimonial);
+                renderTestimonials();
+            }
+
+            // INIT
+            renderTestimonials();
+            updateCarousel(currentIndex);
+            startAutoSlide();
+
+            const form = document.getElementById("newsletter-form");
+            const emailInput = document.getElementById("newsletter-email");
+            const message = document.getElementById("newsletter-msg");
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const email = emailInput.value.trim();
+
+                if (email === "" || !email.includes("@")) {
+                    emailInput.classList.add("border-red-500", "ring-2", "ring-red-300");
+                    return;
+                }
+
+                // Simulate a successful submission
+                emailInput.classList.remove("border-red-500", "ring-2", "ring-red-300");
+                message.classList.remove("hidden");
+                message.textContent = "Thanks for subscribing!";
+                message.classList.add("animate-fade-in");
+
+                emailInput.value = ""; // Clear field
+            });
+        </script>
         <!-- JS Scripts -->
         <script>
             window.addEventListener("load", () => {
@@ -199,8 +452,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             });
         </script>
         <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGZDKJZC"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGZDKJZC" height="0" width="0" style="display: none; visibility: hidden;"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
     </body>
 </html>
