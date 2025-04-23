@@ -112,14 +112,45 @@ window.addEventListener('scroll', () => {
   localStorage.setItem(SCROLL_KEY, window.scrollY.toString());
 });
 
-// Offline/Online Banner
-function updateOnlineStatus() {
-  offlineBanner.classList.toggle('hidden', navigator.onLine);
-}
-window.addEventListener('online', updateOnlineStatus);
-window.addEventListener('offline', updateOnlineStatus);
-document.addEventListener('DOMContentLoaded', updateOnlineStatus);
+let onlineTimeout;
 
+function updateOnlineStatus() {
+  const banner = document.getElementById("offlineBanner");
+  const statusText = document.getElementById("networkStatusText");
+  const statusIcon = document.getElementById("networkStatusIcon");
+
+  // Clear any existing timeout
+  clearTimeout(onlineTimeout);
+
+  if (!navigator?.onLine) {
+    // User is offline
+    statusText.textContent = "You're currently offline. Some features may not work.";
+    statusIcon.textContent = "⚠️";
+    banner.classList.remove("hidden", "opacity-0", "bg-green-600");
+    banner.classList.add("bg-red-600", "opacity-100");
+  } else {
+    // User is back online
+    statusText.textContent = "Back online. Everything should work now.";
+    statusIcon.textContent = "✅";
+    banner.classList.remove("hidden", "opacity-0", "bg-red-600");
+    banner.classList.add("bg-green-600", "opacity-100");
+
+    // Auto-hide after 3 seconds
+    onlineTimeout = setTimeout(() => {
+      banner.classList.remove("opacity-100");
+      banner.classList.add("opacity-0");
+
+      // Fully hide after fade-out
+      setTimeout(() => {
+        banner.classList.add("hidden");
+      }, 300);
+    }, 3000);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", updateOnlineStatus);
+window.addEventListener("online", updateOnlineStatus);
+window.addEventListener("offline", updateOnlineStatus);
 // Compressed Caching
 function cacheQuestionsCompressed(data) {
   const compressed = LZString.compress(JSON.stringify(data));
@@ -250,15 +281,85 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => window.scrollTo(0, savedScroll), 400);
   }
 });
+function showToast(message, type = "success") {
+    const toast = document.getElementById("toast");
+    const toastMessage = document.getElementById("toastMessage");
+
+    toastMessage.textContent = message;
+
+    // Reset toast styling
+    toast.classList.remove("hidden", "bg-red-600", "bg-green-600");
+    toast.classList.add(type === "success" ? "bg-green-600" : "bg-red-600");
+
+    // Show and auto-hide
+    setTimeout(() => toast.classList.add("hidden"), 3500);
+}
+
+function showToast(message, type = "success") {
+    const toast = document.getElementById("toast");
+    const toastMessage = document.getElementById("toastMessage");
+
+    toastMessage.textContent = message;
+
+    // Clear existing styles
+    toast.classList.remove("hidden", "bg-red-600", "bg-green-600");
+    toast.classList.add(type === "success" ? "bg-green-600" : "bg-red-600");
+
+    setTimeout(() => toast.classList.add("hidden"), 3500);
+}
 
 function downloadPDF() {
-                const element = container;
-                const opt = {
-                    margin: 0.5,
-                    filename: "Lekki_Headmaster_Questions_ctrotech.pdf",
-                    image: { type: "jpeg", quality: 0.98 },
-                    html2canvas: { scale: 2 },
-                    jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-                };
-                html2pdf().set(opt).from(element).save();
+    const spinner = document.getElementById("pdfSpinner");
+    const element = container;
+
+    // Check if user is online
+    if (!navigator.onLine) {
+        showToast("You are offline. Please connect to the internet to download.", "error");
+        return; // Stop execution
+    }
+
+    // Show spinner
+    spinner.classList.remove("hidden");
+    spinner.classList.add("opacity-100");
+    document.body.style.overflow = "hidden";
+
+    const opt = {
+        margin: 0.5,
+        filename: "Lekki_Headmaster_Questions_ctrotech.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+    };
+
+    html2pdf()
+        .set(opt)
+        .from(element)
+        .save()
+        .then(() => {
+            showToast("PDF Download Successful!", "success");
+        })
+        .catch((error) => {
+            console.error("PDF download failed:", error);
+
+            const msg = error?.message?.toLowerCase();
+            let message = "An unknown error occurred. Please try again.";
+
+            if (msg?.includes("network")) {
+                message = "Network error: Please check your connection.";
+            } else if (msg?.includes("timeout")) {
+                message = "Timeout: The process took too long.";
+            } else if (msg?.includes("canvas") || msg?.includes("html2pdf")) {
+                message = "PDF generation error. Please try again.";
             }
+
+            showToast(message, "error");
+        })
+        .finally(() => {
+            spinner.classList.add("opacity-0");
+            setTimeout(() => {
+                spinner.classList.add("hidden");
+                spinner.classList.remove("opacity-100");
+                document.body.style.overflow = "unset";
+            }, 300);
+        });
+}
