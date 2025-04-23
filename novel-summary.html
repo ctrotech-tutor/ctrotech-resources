@@ -1,13 +1,89 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-		<meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-		<title>Hello, World!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no""/>
+  <title>Coming Soon | Ctrotech Tutor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" type="module"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #eef2f7 0%, #e0e7ff 100%);
+    }
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+  </style>
 </head>
-<body>
-		<h1>
-				Hello, World!
-		</h1>
+<body class="flex items-center justify-center min-h-screen text-gray-800 px-6">
+
+  <div class="max-w-xl text-center space-y-6 bg-white rounded-3xl shadow-2xl p-8 border border-indigo-200 relative overflow-hidden">
+    <div class="absolute -top-10 -left-10 w-40 h-40 bg-indigo-100 rounded-full mix-blend-multiply blur-2xl opacity-30 animate-ping"></div>
+    <div class="text-indigo-600 text-6xl pulse">
+      <ion-icon name="book-outline"></ion-icon>
+    </div>
+
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-indigo-700 leading-tight">
+      Coming Soon!
+    </h1>
+
+    <p class="text-gray-600 text-lg">
+      Our <strong>"Novel Summary"</strong> page is almost ready. We’re crafting something valuable to help you excel in your JAMB preparation.
+    </p>
+
+    <!-- Countdown (optional) -->
+    <div id="countdown" class="text-indigo-500 text-xl font-semibold flex justify-center gap-4 mt-4">
+      <div><span id="days">00</span><div class="text-sm text-gray-500">Days</div></div>
+      <div><span id="hours">00</span><div class="text-sm text-gray-500">Hours</div></div>
+      <div><span id="minutes">00</span><div class="text-sm text-gray-500">Minutes</div></div>
+      <div><span id="seconds">00</span><div class="text-sm text-gray-500">Seconds</div></div>
+    </div>
+
+    <div class="flex justify-center gap-4 mt-6 flex-wrap">
+      <a href="index.html" class="px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow-md transition">
+        <ion-icon name="home-outline" class="mr-2 align-middle"></ion-icon> Back to Home
+      </a>
+      <a href="mailto:ctrotech.devs@gmail.com" class="px-5 py-3 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-xl transition">
+        <ion-icon name="mail-outline" class="mr-2 align-middle"></ion-icon> Contact Us
+      </a>
+    </div>
+
+    <p class="text-sm text-gray-400 mt-6">Ctrotech Tutor — Learn and Grow Smarter.</p>
+  </div>
+
+  <script>
+    // Countdown Logic (set to 7 days from now)
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 7);
+
+    const countdown = () => {
+      const now = new Date().getTime();
+      const distance = endDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days < 10 ? `0${days}` : days;
+      document.getElementById("hours").textContent = hours < 10 ? `0${hours}` : hours;
+      document.getElementById("minutes").textContent = minutes < 10 ? `0${minutes}` : minutes;
+      document.getElementById("seconds").textContent = seconds < 10 ? `0${seconds}` : seconds;
+
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "The page is now live!";
+      }
+    };
+
+    setInterval(countdown, 1000);
+    countdown();
+  </script>
+<script src="mobile_check.js"></script>
+        
 </body>
 </html>
