@@ -60,6 +60,9 @@
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.1/dist/gsap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.1/dist/ScrollTrigger.min.js"></script>
 
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
         <!-- Structured Data for SEO -->
         <script type="application/ld+json">
             {
@@ -117,30 +120,6 @@
                 outline: 3px solid #4f46e5;
                 outline-offset: 2px;
             }
-            .testimonial-card {
-                min-width: 300px;
-                background: rgba(255, 255, 255, 0.9);
-                backdrop-filter: blur(10px);
-                padding: 1.5rem;
-                border-radius: 12px;
-                text-align: center;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                transition: transform 0.3s ease-in-out;
-            }
-
-            .testimonial-card:hover {
-                transform: scale(1.05);
-            }
-
-            .testimonial-img {
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                margin: 0 auto 10px;
-                border: 4px solid #007bff;
-                box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
-            }
-
             @keyframes fade-in {
                 from {
                     opacity: 0;
@@ -172,9 +151,7 @@
 
             #testimonialSlider {
                 display: flex;
-                overflow-x: auto;
                 scroll-behavior: smooth;
-                padding-bottom: 10px;
             }
             #testimonialSlider::-webkit-scrollbar {
                 display: none;
@@ -310,7 +287,7 @@
                     </h2>
                     <p class="text-gray-600 mt-4 text-lg max-w-3xl mx-auto animate-slide-up px-5">Watch how <strong>Ctrotech Tutor Insights</strong> helps learners grow smart, skilled, and future-ready!</p>
                     <!-- Testimonials Container -->
-                    <div id="testimonialSlider" class="mt-10 flex space-x-6 overflow-x-auto approvedTestimonialList px-4 py-2 scrollbar-hide">
+                    <div id="testimonialSlider" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center p-4 overflow-x-auto approvedTestimonialList scrollbar-hide">
                         <!-- Loader Skeleton Cards -->
                         <div id="spinner" class="flex gap-4 overflow-x-auto px-2 py-4">
                             <div class="animate-pulse flex flex-col items-center bg-white shadow rounded-xl p-4 w-64">
@@ -423,7 +400,7 @@
                 <p>&copy; 2025 Ctrotech Tutor Insights. All rights reserved.</p>
             </div>
         </footer>
-        
+
         <script>
             // Loader
             window.addEventListener("load", () => {
@@ -514,16 +491,49 @@
             const createTestimonialCard = (key, testimonial) => {
                 const card = document.createElement("div");
                 card.id = `testimonial-${key}`;
-                card.classList.add("testimonial-card", "bg-white", "rounded-2xl", "p-6", "shadow-lg", "min-w-[280px]", "max-w-sm", "transition", "hover:scale-[1.02]");
+                card.classList.add(
+                    "testimonial-card",
+                    "bg-white",
+                    "rounded-2xl",
+                    "p-6",
+                    "shadow-xl",
+                    "min-w-[280px]",
+                    "max-w-sm",
+                    "h-[320px]",
+                    "flex",
+                    "flex-col",
+                    "justify-between",
+                    "transition-transform",
+                    "duration-300",
+                    "ease-in-out",
+                    "hover:scale-[1.03]",
+                    "hover:shadow-2xl"
+                );
+
                 card.innerHTML = `
-        <img src="${testimonial.image || "https://i.pravatar.cc/100"}" alt="${testimonial.name}" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover shadow-md">
-        <p class="text-gray-700 italic text-base leading-relaxed text-center">"${testimonial.message}"</p>
-        <h4 class="text-blue-700 font-bold mt-4 text-center">– ${testimonial.name}</h4>
-        <div class="flex justify-center mt-2 text-yellow-500 text-lg">${"⭐".repeat(testimonial.rating)}</div>
-    `;
+    <div class="flex items-center gap-4 mb-4">
+      ${
+          testimonial.image
+              ? `<img src="${testimonial.image}" alt="${testimonial.name}" class="w-12 h-12 flex-shrink-0 rounded-full border-4 border-blue-500 shadow-md object-cover"/>`
+              : `<div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 text-white text-lg font-bold shadow-md">
+              ${testimonial.name.charAt(0).toUpperCase()}
+            </div>`
+      }
+      <div>
+        <h3 class="font-semibold text-blue-800">${testimonial.name}</h3>
+        <p class="text-sm text-gray-500">Learner @ Ctrotech</p>
+      </div>
+    </div>
+
+    <p class="text-gray-700 text-[15px] leading-relaxed line-clamp-5 italic">"${testimonial.message}"</p>
+
+    <div class="mt-4 text-center">
+      <div class="text-yellow-500 text-lg mb-1">${"⭐".repeat(testimonial.rating || 5)}</div>
+    </div>
+  `;
+
                 return card;
             };
-
             // Hide Loader
             const hideLoader = () => {
                 loader.style.display = "none";
