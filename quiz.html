@@ -1,10 +1,83 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Quiz Mode - Practice Questions</title>
-        <meta name="description" content="Interactive quiz mode for testing your knowledge with multiple-choice questions." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Ctrotech Tutor Insights" />
+  <meta name="keywords" content="JAMB 2025, Novel Questions, The Lekki Headmaster, UTME Quiz, CBT Practice, Exam Preparation" />
+  <meta name="theme-color" content="#4f46e5" />
+  <meta name="description" content="Test your knowledge with 2025 JAMB novel quiz questions from 'The Lekki Headmaster'. Practice smarter with Ctrotech Tutor Insights." />
+
+  <!-- Canonical and Robots -->
+  <link rel="canonical" href="https://ctrotech-tutor.github.io/ctrotech-resources/quiz.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+
+  <!-- Open Graph for Social Media Preview -->
+  <meta property="og:title" content="2025 JAMB Novel Quiz | Ctrotech Tutor Insights" />
+  <meta property="og:description" content="Get exam-ready with our UTME quiz on The Lekki Headmaster. Test your knowledge and track your progress!" />
+  <meta property="og:image" content="https://ctrotech-tutor.github.io/ctrotech-resources/banner1.png" />
+  <meta property="og:image:secure_url" content="https://ctrotech-tutor.github.io/ctrotech-resources/banner1.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://ctrotech-tutor.github.io/ctrotech-resources/quiz.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card Meta -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="2025 JAMB Novel Quiz | Ctrotech Tutor Insights" />
+  <meta name="twitter:description" content="Practice JAMB questions based on The Lekki Headmaster. Sharpen your UTME skills with Ctrotech Tutor Insights." />
+  <meta name="twitter:image" content="https://ctrotech-tutor.github.io/ctrotech-resources/banner1.png" />
+
+  <!-- SEO Extras -->
+  <meta name="language" content="English" />
+  <meta name="distribution" content="global" />
+  <meta name="rating" content="general" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="google-site-verification" content="06TmKUBafqk7SKGbkDYTU6xjsXqlw35V8IrXHCFLB3E" />
+
+  <!-- Google / Schema.org -->
+  <meta itemprop="name" content="2025 JAMB Novel Quiz | Ctrotech Tutor Insights" />
+  <meta itemprop="description" content="Take interactive quiz questions from The Lekki Headmaster. Study smart, score high with Ctrotech Tutor Insights." />
+  <meta itemprop="image" content="https://ctrotech-tutor.github.io/ctrotech-resources/banner1.png" />
+
+  <!-- Favicon and App Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Page Title -->
+  <title>2025 JAMB Novel Quiz | Ctrotech Tutor Insights</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP Animations -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.1/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.1/dist/ScrollTrigger.min.js"></script>
+
+  <!-- AOS Animations -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Ctrotech Tutor Insights",
+      "url": "https://ctrotech-tutor.github.io/ctrotech-resources/quiz.html",
+      "logo": "https://ctrotech-tutor.github.io/ctrotech-resources/logo.png",
+      "description": "Practice JAMB 2025 questions based on the novel 'The Lekki Headmaster'. Interactive, educational quiz platform by Ctrotech Tutor Insights.",
+      "sameAs": [
+        "https://www.facebook.com/ctrotech",
+        "https://wa.me/2349041622945"
+      ]
+    }
+  </script>
+</head>
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@0.4.0/dist/confetti.browser.min.js"></script>
         <link rel="stylesheet" href="style.css" />
@@ -153,7 +226,7 @@
     Download / Print Certificate
   </button>
 </div>
-        <section id="startScreen" class="rounded-3xl p-10 w-full max-w-md space-y-6 animate-fadeIn">
+        <section id="startScreen" class="rounded-3xl px-10 pb-[5rem] pt-10 w-full max-w-md space-y-6 animate-fadeIn">
             <!-- Title & Instructions -->
             <div class="text-center space-y-2">
                 <h1 class="text-4xl font-bold text-indigo-700 leading-tight drop-shadow-sm">
@@ -223,16 +296,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Footer -->
-            <footer class="mt-10 border-t pt-6 text-center text-sm text-gray-500 bg-white rounded-b-3xl shadow-inner">
-                <div class="flex justify-center items-center gap-2 mb-2">
-                    <img src="ctrotech.jpg" alt="Ctrotech Logo" class="w-6 h-6 object-cover rounded-full" />
-                    <span class="font-semibold text-indigo-600">Ctrotech Tutor Insights</span>
-                </div>
-                <p class="max-w-sm mx-auto px-4">
-                    Empowering learners with creative, structured education — one quiz at a time.
-                </p>
-            </footer>
         </section>
 
         <div id="reviewScreen" class="hidden px-2 pt-6"></div>
@@ -271,7 +334,7 @@
             </div>
 
             <!-- Quiz Screen Container -->
-            <section class="bg-white p-4 w-full max-w-md mx-auto space-y-4 animate-fadeIn relative">
+            <section class="bg-white p-4 w-full max-w-md mx-auto space-y-4 animate-fadeIn relative pb-[4rem]">
                 <!-- Question Card -->
                 <div class="bg-white rounded-2xl p-6 space-y-6">
                     <!-- Question Text -->
@@ -313,6 +376,13 @@
                 </div>
             </section>
         </div>
+         <footer class="fixed bottom-0 w-full bg-white border-t py-4 text-center text-xs text-gray-500 shadow">
+            <div class="flex items-center justify-center gap-2 px-4">
+                <img src="ctrotech.jpg" alt="Ctrotech Logo" class="h-8 w-auto rounded-full" />
+                <span>&copy; 2025 Ctrotech Tutor Insights. All rights reserved. | Designed for Education & Growth</span>
+            </div>
+        </footer>
+
         <!-- End Quiz Confirmation Modal -->
         <div id="endQuizModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center px-6 hidden">
             <div class="bg-white rounded-xl shadow-lg p-6 w-[90%] max-w-sm animate-fadeIn">
@@ -359,6 +429,7 @@
 
         <script src="quiz.js" defer></script>
         <script src="quizData.js"></script>
+        <script src="mobile_check.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     </body>
