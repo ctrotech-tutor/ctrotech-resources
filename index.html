@@ -402,11 +402,35 @@
         </footer>
 
         <script>
-            // Loader
-            window.addEventListener("load", () => {
-                document.getElementById("loader").classList.add("hide");
-            });
+            document.body.style.overflow = "hidden";
 
+const loader = document.getElementById("loader");
+const maxLoadTime = 10000; // max wait of 10s
+
+// Timeout in case of never-ending load
+const fallbackTimeout = setTimeout(() => {
+  hideLoader(true);
+}, maxLoadTime);
+
+// Called when fully loaded
+window.addEventListener("load", () => {
+  clearTimeout(fallbackTimeout);
+  hideLoader();
+});
+
+function hideLoader(forced = false) {
+  loader.classList.add("hide");
+  setTimeout(() => {
+    loader.remove();
+    document.body.style.overflow = "unset";
+
+    if (forced) {
+      // Optional: show a toast that loading was forced
+      console.warn("Loader timeout exceeded. Some assets may not have loaded.");
+    }
+  }, 300);
+}
+            
             // Scroll to Top
             const scrollTop = document.getElementById("scrollTop");
             window.addEventListener("scroll", () => {
